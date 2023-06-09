@@ -16,7 +16,7 @@ function App() {
         made some changes
         made another changes
      </h1>
-     <Header></Header>
+     {/*<Header></Header>*/}
     </>
   );
 }
