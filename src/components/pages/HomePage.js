@@ -5,7 +5,7 @@ import Testimonials from "../sections/headingPages/Testimonials";
 import About from "../sections/headingPages/About";
 
 export default function HomePage() {
-render(
+return(
     <>
         <Header />
         <main>

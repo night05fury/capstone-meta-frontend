@@ -1,9 +1,10 @@
-import Login from "../sections/loginPages/Login";
 
+import Headers from "../sections/orderPages/Heading";
 export default function Order() {
   return (
     <>
-      <Login />
+      
+      <Headers />
     </>
   );
 }
