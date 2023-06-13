@@ -1,28 +1,20 @@
-import React from "react";
-import {useNavigate} from "react-router-dom";
-import RestaurantPic from "../assets/restaurant.jpg";
-import BookingForm from "../sections/reservePages/BookingForm";
+import Heading from "../sections/reservePages/Heading";
+import ReservationForm from "../sections/reservePages/BookingForm";
+import { useReducer } from "react";
+import { fetchAPI } from "../../bookingsAPI";
+export default function BookingPage() {
+  function updateTimes(date) {
+    return fetchAPI(date);
+  }
 
-// 
+  const output = fetchAPI(new Date());
 
-const Booking =()=>{
-    const naviagate=useNavigate();
+  const [availableTimes, dispatch] = useReducer(updateTimes, output);
 
-    return (
-        <main className="booking">
-            <h1>Booking Table</h1>
-            <section className="">
-                <img src={RestaurantPic} alt="Restaurant View" 
-                style={{width:"100%", height:"auto",borderRadius:"5px"}}/>
-                
-            </section>
-            {/* Booking Form Section  */}
-            <section>
-                {/* importing the Booking Form component Page from sections>reservePages>Booking Form */}
-                <BookingForm naviagate= {naviagate}/>
-
-            </section>
-        </main>
-    );
+  return (
+    <>
+      <Heading />
+      <ReservationForm availableTimes={availableTimes} updateTimes={dispatch} />
+    </>
+  );
 }
-export default Booking;
