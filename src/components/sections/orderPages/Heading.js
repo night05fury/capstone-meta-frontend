@@ -1,18 +1,15 @@
-import Image from "../../../assets/food/food4.webp";
-
-export default function Heading()
-{
-    return(
-
-        <header>
-            <img src={Image} alt="Little Lemon Ingredients">
-            </img>
-
-            <div>
-                <h1>
-                    Order Online
-                </h1>
+import HeroImage from "../../../assets/food/food4.webp";
+export default function Heading() {
+    return (
+        <header className="reserve-table">
+            <img
+                className="header-reserve"
+                src={HeroImage}
+                alt="Little Lemon Ingredients"
+            ></img>
+            <div className="reserve-header-text">
+                <h1>Order Online</h1>
             </div>
         </header>
-    )
+    );
 }
